@@ -1,0 +1,21 @@
+<br>
+<%= @scholar.name%><br>
+Book Total: <%= @scholar.total_books%><br><br>
+<% @scholar.books.each do |b|%>
+    <%= b.title%><br>
+<%end%>
+
+<br>
+<%= form_for @scholar.books.build do |f|%>
+    <%= f.label :title%>
+    <%= f.text_field :title%>
+    <%= f.hidden_field :scholar_id%>
+   <%= f.collection_select :field_id, Field.all, :id, :name, include_blank: "Select"%>
+    <!-- <%= f.fields_for :fields, @scholar.fields.build do |fields_fields|%>
+    <%= fields_fields.label :name, 'New Field'%>
+    <%= fields_fields.text_field :name%><br>
+    <%end%> -->
+    <!-- <%= f.label :field_id%>
+    <%= f.number_field :field_id%> -->
+    <%= f.submit 'Create Book'%>
+<%end%>

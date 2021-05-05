@@ -6,7 +6,7 @@ class CreateScholars < ActiveRecord::Migration[6.1]
       t.string :password_digest
       t.string :education
       t.string :current_position
-      t.integer :totoal_books
+      t.integer :total_books
 
       t.timestamps
     end
