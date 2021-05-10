@@ -1,0 +1,11 @@
+<br>
+<%= @field.name%><br>
+
+<%= form_for @book do |f|%>
+    <%= f.label :title%>
+    <%= f.text_field :title%>
+    <%= f.hidden_field :field_id%>
+    <%= f.hidden_field :scholar_id%>
+<%= f.submit "Post a New Book"%> 
+<%end%>
+

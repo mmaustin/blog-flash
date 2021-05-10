@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  resources :scholars, only: [:show] do
+    resources :books, only: [:show, :index, :new]
+  end
+
   resources :fields
   resources :books
   resources :scholars

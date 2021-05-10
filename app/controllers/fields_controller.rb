@@ -6,7 +6,7 @@ class FieldsController < ApplicationController
 
     def show
         @field = Field.find_by_id(params[:id])
-        #@book = @field.books.build(scholar_id: session[:user_id]) this will allow for
+        @book = @field.books.build(scholar_id: 1)#(scholar_id: session[:user_id]) this will allow for
         #creating of a book with the appropriate fields once i set up the signup/login/session
         #features
     end
